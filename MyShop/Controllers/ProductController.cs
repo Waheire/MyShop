@@ -7,7 +7,6 @@ using MyShop.Services.IServices;
 
 namespace MyShop.Controllers
 {
-
     [Route("api/[controller]")]
     [ApiController]
     public class ProductController : ControllerBase
@@ -27,14 +26,14 @@ namespace MyShop.Controllers
             try 
             {
                 var products = await _productService.GetProductsAsync();
-                if (products == null || products.Count < 1) 
+                if (products == null) 
                 {
                     return NotFound();
                 }
                 return Ok(products);
             } catch (Exception ex) 
             {
-                return BadRequest();
+                return BadRequest(ex.Message);
             }
         }
 
@@ -51,7 +50,7 @@ namespace MyShop.Controllers
                 return Ok(product);
             } catch (Exception ex) 
             {
-                return BadRequest();
+                return BadRequest(ex.Message);
             }
         }
 
@@ -66,7 +65,7 @@ namespace MyShop.Controllers
 
             } catch (Exception ex) 
             {
-                return BadRequest();
+                return BadRequest(ex.Message);
             }
             
         }
@@ -87,7 +86,7 @@ namespace MyShop.Controllers
             }
             catch (Exception ex)
             {
-                return BadRequest();
+                return BadRequest(ex.Message);
             }
         }
 
@@ -106,7 +105,7 @@ namespace MyShop.Controllers
             }
             catch (Exception ex)
             {
-                return BadRequest();
+                return BadRequest(ex.Message);
             }
         }
 

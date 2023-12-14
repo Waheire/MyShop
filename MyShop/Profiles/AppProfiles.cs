@@ -9,6 +9,10 @@ namespace MyShop.Profiles
         public AppProfiles()
         {
             CreateMap<AddProductDto, Product>().ReverseMap();
+            CreateMap<AddOrderDto, Order>().ReverseMap().ReverseMap();
+            CreateMap<OrderResponseDto, OrderResponseDto>().ReverseMap();
+            CreateMap<AddOrderItemDto, OrderItem>().ReverseMap();
+            CreateMap<AddUserDto , User>().ReverseMap();    
         }
     }
 }

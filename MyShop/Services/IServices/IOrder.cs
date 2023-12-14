@@ -8,7 +8,7 @@ namespace MyShop.Services.IServices
         Task<List<Order>> GetOrdersAsync();
         Task<Order> GetOrderByIdAsync(Guid id);
         Task<string> AddOrderAsync(Order order);
-        Task<string> UpdateProductAsync(Order order);
-        Task<string> DeleteProductAsync(Order order);
+        Task<string> UpdateOrderAsync(Order order);
+        Task<string> DeleteOrderAsync(Order order);
     }
 }

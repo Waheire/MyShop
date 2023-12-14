@@ -21,6 +21,9 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 
 //Register services for DI
 builder.Services.AddScoped<IProduct, ProductService>();
+builder.Services.AddScoped<IOrder, OrderService>();
+builder.Services.AddScoped<IOrderItem, OrderItemService>();
+builder.Services.AddScoped<IUser, UserService>();
 
 //Auto mapper
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
