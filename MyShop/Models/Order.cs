@@ -6,7 +6,7 @@ namespace MyShop.Models
     {
         [Key]
         public Guid OrderId { get; set; }
-        public DateTime OrderDate { get; set; }
-        public List<OrderItem> orderItems { get; set;}
+        public DateTime OrderDate { get; set; } = DateTime.Now;
+        public List<OrderItem> orderItems { get; set;} = new List<OrderItem>();
     }
 }

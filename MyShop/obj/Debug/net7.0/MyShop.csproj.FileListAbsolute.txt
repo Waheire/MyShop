@@ -76,3 +76,4 @@ C:\Projects\Cohort Exercises\MyShop\MyShop\obj\Debug\net7.0\refint\MyShop.dll
 C:\Projects\Cohort Exercises\MyShop\MyShop\obj\Debug\net7.0\MyShop.pdb
 C:\Projects\Cohort Exercises\MyShop\MyShop\obj\Debug\net7.0\MyShop.genruntimeconfig.cache
 C:\Projects\Cohort Exercises\MyShop\MyShop\obj\Debug\net7.0\ref\MyShop.dll
+C:\Projects\Cohort Exercises\MyShop\MyShop\obj\Debug\net7.0\MyShop.sourcelink.json

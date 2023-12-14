@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MyShop.Models
 {
@@ -9,6 +10,6 @@ namespace MyShop.Models
         public string Name { get; set; }
         public string Description { get; set; }
         public int Price { get; set; }
-        public List<OrderItem>  OrderItems { get; set; }
+        public List<OrderItem>  OrderItems { get; set; } = new List<OrderItem>();
     }
 }

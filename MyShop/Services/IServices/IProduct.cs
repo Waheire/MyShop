@@ -1,5 +1,5 @@
-﻿using MyShop.Dtos;
-using MyShop.Models;
+﻿using MyShop.Models;
+using MyShop.Models.Dtos;
 
 namespace MyShop.Services.IServices
 {
@@ -7,8 +7,8 @@ namespace MyShop.Services.IServices
     {
         Task<List<Product>> GetProductsAsync();
         Task<Product> GetProductByIdAsync(Guid id);
-        Task<string> AddProductAsync(AddProduct newProduct);
-        Task<string> UpdateProductAsync(Guid id, AddProduct updatedProduct);
-        Task<string> DeleteProductAsync(AddProduct Product);
+        Task<string> AddProductAsync(Product product);
+        Task<string> UpdateProductAsync(Product product);
+        Task<string> DeleteProductAsync(Product Product);
     }
 }

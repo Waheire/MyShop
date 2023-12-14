@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using MyShop.Data;
-using MyShop.Dtos;
 using MyShop.Models;
+using MyShop.Models.Dtos;
 using MyShop.Services.IServices;
 
 namespace MyShop.Services
@@ -14,69 +14,36 @@ namespace MyShop.Services
         {
             _context = context;
         }
-        public async Task<string> AddProductAsync(AddProduct newProduct)
+        public async Task<string> AddProductAsync(Product product)
         {
-            try 
-            {
-                _context.Add(newProduct);
+                _context.Add(product);
                 await _context.SaveChangesAsync();
-                return "Product Added Successfully!";
-            } catch (Exception ex)
-            {
-                return $"An Error Occurred! \n  {ex.Message}";
-            }
-           
+                return "Product Added Successfully!";  
         }
 
-        public async Task<string> DeleteProductAsync(AddProduct Product)
+        public async Task<string> DeleteProductAsync(Product product)
         {
-            try 
-            {
-                _context.Remove(Product);
+                _context.Remove(product);
                 await _context.SaveChangesAsync();
                 return "Product Successfully Deleted!";
-            } catch (Exception ex)
-            {
-                return $"An Error occurred! {ex.Message}";
-            }
         }
 
         public async Task<Product> GetProductByIdAsync(Guid id)
         {
-            try 
-            {
-                var product = await _context.Products.FirstOrDefaultAsync(x => x.ProductId == id);
-                return product;
-            } catch (Exception ex) 
-            {
-                return new Product();
-            }
-          
+                return await _context.Products.FirstOrDefaultAsync(x => x.ProductId == id);
         }
 
         public async Task<List<Product>> GetProductsAsync()
         {
-            try 
-            {
                 var products = await _context.Products.ToListAsync();
                 return products;
-            } catch (Exception ex) 
-            {
-                return new List<Product>();
-            }
         }
 
-        public async Task<string> UpdateProductAsync(Guid id, AddProduct updatedProduct)
+        public async Task<string> UpdateProductAsync( Product product)
         {
-            try 
-            {
-                _context.Update(updatedProduct);
+                _context.Update(product);
                 await _context.SaveChangesAsync();
                 return "Product Successfully Updated!";
-            } catch (Exception ex) 
-            {
-                return $"An error Occurred! {ex.Message}";
-            }
         }
     }
 }
